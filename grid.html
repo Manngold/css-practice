@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid</title>
+    <style>
+        .father {
+            display: grid;  /* grid container define column and row*/
+            grid-template-columns: 150px 200px;
+            grid-template-rows: 150px 200px;
+            grid-gap: 10px; /* gap between elements*/
+            grid-auto-rows: 60px; /* setting undefined items grid template rows*/
+            grid-auto-columns: 60px;
+            grid-auto-flow: column; /* setting undefined items direction*/
+        }
+        .box {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="father">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>
