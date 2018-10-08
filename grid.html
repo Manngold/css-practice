@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,47 @@
     <title>CSS Grid</title>
     <style>
         .father {
-            display: grid;  /* grid container define column and row*/
-            grid-template-columns: 150px 200px;
-            grid-template-rows: 150px 200px;
-            grid-gap: 10px; /* gap between elements*/
-            grid-auto-rows: 60px; /* setting undefined items grid template rows*/
-            grid-auto-columns: 60px;
-            grid-auto-flow: column; /* setting undefined items direction*/
+            display: grid;
+            /* grid container define column and row*/
+            grid-gap: 5px;
+            /* gap between elements*/
+            grid-auto-rows: 200px;
+            /* setting undefined items grid template rows*/
+            /* setting undefined items direction*/
+            grid-template-areas: "header header header""content content sidebar""content content sidebar""footer footer footer";
         }
-        .box {
-            background-color: blue;
+
+        .first {
+            grid-area: header;
+            background-color: #f1c40f;
+        }
+
+        .second {
+            grid-area: sidebar;
+            background-color: #27ae60;
+        }
+
+        .third {
+            grid-area: footer;
+            background-color: #3498db;
+        }
+
+        .fourth {
+            grid-area: content;
+            background-color: #d35400;
         }
     </style>
 </head>
+
 <body>
-    
+
     <div class="father">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+        <div class="fourth"></div>
     </div>
 
 </body>
+
 </html>
