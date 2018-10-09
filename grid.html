@@ -12,29 +12,27 @@
             /* grid container define column and row*/
             grid-gap: 5px;
             /* gap between elements*/
-            grid-auto-rows: 200px;
+            grid-auto-rows: 100px;
             /* setting undefined items grid template rows*/
             /* setting undefined items direction*/
-            grid-template-columns: max-content repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
             /* fr is fraction, automatically resizing template size*/
             /* and repeat(how many repeat, fr) very useful */
             /* mimax(minimum size, maximum size)*/
+            /*max-content max-content is define box size by content size the other is min-content
+            min-content use minimum space. so, no expand your template*/
+            /*
+                auto-fit is stretch your content and fill browser
+                auto-fill is no stretch. but have ghost grid
+            */
         }
 
-        .first {
-            background-color: #f1c40f;
+        .box:nth-child(even) {
+            background-color: aquamarine;
         }
 
-        .second {
-            background-color: #27ae60;
-        }
-
-        .third {
-            background-color: #3498db;
-        }
-
-        .fourth {
-            background-color: #d35400;
+        .box:nth-child(odd) {
+            background-color: blue;
         }
     </style>
 </head>
@@ -42,13 +40,18 @@
 <body>
 
     <div class="father">
-        <div class="first">
-            this is example of max-content max-content is define box size by content size the other is min-content
-            min-content use minimum space. so, no expand your template
-        </div>
-        <div class="second"></div>
-        <div class="third"></div>
-        <div class="fourth"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
 
 </body>
