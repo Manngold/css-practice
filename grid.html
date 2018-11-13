@@ -14,8 +14,10 @@
         grid-auto-rows: 100px;
         /* setting undefined items grid template rows*/
         /* setting undefined items direction*/
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: [first-line] 1fr [second-line] 1fr [third-line] 1fr [fourth-line] 1fr [fifth-line] 1fr [last-line];
+        /* this is line naming [line-name] size*/
         height: 100vh;
+        grid-auto-flow: row dense; /* blank is filled by grid-auto-flow*/
         /*justify-items and align-items are modify your item position #default is stretch your box#*/
         /* place-content is short hand property that replace justify-content and align-content place-items is equal */
         /* fr is fraction, automatically resizing template size*/
@@ -30,7 +32,9 @@
       }
 
       .box:first-child {
-        grid-column: 1 / 3; /* give own feature to box  1 / 3 means start first line end third line (starting point is zero)*/
+        /* grid-column: 1 / 3; give own feature to box  1 / 3 means start first line end third line (starting point is zero)*/
+        grid-column-start: second-line;
+        grid-column-end: fourth-line; /* when you set end value -1 that means end the line of browser and you can use line-name*/
       }
 
       .box {
