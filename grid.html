@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>CSS Grid</title>
     <style>
-        .father {
-            display: grid;
-            /* grid container define column and row*/
-            grid-gap: 5px;
-            /* gap between elements*/
-            grid-auto-rows: 100px;
-            /* setting undefined items grid template rows*/
-            /* setting undefined items direction*/
-            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-            /* fr is fraction, automatically resizing template size*/
-            /* and repeat(how many repeat, fr) very useful */
-            /* mimax(minimum size, maximum size)*/
-            /*max-content max-content is define box size by content size the other is min-content
+      .father {
+        display: grid;
+        /* grid container define column and row*/
+        grid-gap: 5px;
+        /* gap between elements*/
+        grid-auto-rows: 100px;
+        /* setting undefined items grid template rows*/
+        /* setting undefined items direction*/
+        grid-template-columns: repeat(5, 100px);
+        height: 100vh;
+        place-content: center end; /* place-content is short hand property */
+        /* fr is fraction, automatically resizing template size*/
+        /* and repeat(how many repeat, fr) very useful */
+        /* mimax(minimum size, maximum size)*/
+        /*max-content max-content is define box size by content size the other is min-content
             min-content use minimum space. so, no expand your template*/
-            /*
+        /*
                 auto-fit is stretch your content and fill browser
                 auto-fill is no stretch. but have ghost grid
-            */
-        }
+        */
+      }
 
-        .box:nth-child(even) {
-            background-color: aquamarine;
-        }
+      .box:nth-child(even) {
+        background-color: aquamarine;
+      }
 
-        .box:nth-child(odd) {
-            background-color: blue;
-        }
+      .box:nth-child(odd) {
+        background-color: blue;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="father">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
     </div>
-
-</body>
-
+  </body>
 </html>
