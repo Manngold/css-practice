@@ -66,3 +66,77 @@ fr은 grid 영역에서 cell이 최대한 차지하는 공간의 단위이다. �
 ### grid-template
 
 이 속성을 활용해서 areas, column, row, line naming 등을 설정 할 수 있다.
+
+### justify-items, align-items
+
+grid의 item들은 기본적으로 `stretch` 속성을 갖고 item을 늘려서 cell의 값을 채웁니다
+
+이때 수평은 `justify-items`, 수직은 `align-items`를 활용하여 컨트롤 합니다.
+
+### place-items
+
+`justify-items`와 `align-items`속성을 한 번에 컨트롤 할 수 있도록 해줍니다.
+
+### justify-content, align-content
+
+`justify-content`와 `align-content`는 grid의 item들을 컨트롤 하는 것이 아니라 grid 자체의 위치를 변경합니다.
+
+`justify-content`는 수평 위치, `align-content`은 수직 위치를 컨트롤 합니다
+
+### place-content
+
+`justify-content`와 `align-content`속성을 한 번에 컨트롤 할 수 있도록 해줍니다.
+
+### grid-auto-rows/columns
+
+`grid-template-columns/rows`로 설정된 갯수보다 cell들이 많아질 경우 많아진 cell에 대해서 속성이 적용되지 않는다
+
+따라서 초과된 갯수에 대한 cell의 속성을 정의하기 위해서 `grid-auto-rows/columns` 속성을 사용하면 초과된 갯수에 대한 cell의 속성 값을 설정 할 수 있다
+
+### grid-auto-flow
+
+초과된 cell을 어떻게 배치할 것인가에 대한 속성이다 `column row dense` 등의 속성이 존재한다
+
+### minmax
+
+cell들이 갖는 최소 크기와 최대 크기를 설정할 수 있다.
+
+`grid-template-columns/rows`에서 설정 할 수 있다.
+
+cell의 너비는 항상 min 값을 유지하고 최대 max값을 갖는다.
+
+이때 min 값을 유지하기 위해 column과 row에서 설정해둔 cell의 갯수를 무시 할 수 있다
+
+### auto-fit/fill
+
+line에서 cell의 상태를 결정해준다
+
+auto-fit은 해당 라인이 빈 공간이 발생하지 않게 맞추기 위해서 cell의 너비를 늘리거나 줄이면서 line을 채운다.
+
+auto-fill은 라인이 다 채워지지 않고 빈 공간이 생기더라도 cell의 크기를 유지한다.
+
+새로운 cell이 추가되는 상황
+
+auto-fit은 새로운 cell을 넣고 모든 cell의 너비를 조정한다
+
+auto-fill 전체 cell의 크기를 유지하면서 cell을 추가한다.
+
+### min-content, max-content
+
+cell안의 content 크기에 따른 cell의 크기 적용 기법이다
+
+min-content : content를 줄일 수 있는한 최대한 작게 줄인다
+
+max-content : content를 건드리지 않고 최소한의 크기를 유지한다
+
+이 속성과 repeat, minmax 속성을 활용하면 손쉽게 반응형 디자인을 구현 할 수 있게 된다.
+
+`grid-template-columns : repeat(5, minmax(max-content, 1fr))`
+
+이 설정을 해석하면
+
+line에 5개의 cell이 존재하는데 cell의 크기는 최소, 최대 크기가 설정되어 있다
+
+최소 크기는 cell의 content를 건드리지 않고 최소한의 크기를 유지하고
+
+최대 크기는 1fr의 크기만큼 차지한다
